@@ -8,16 +8,6 @@ html {
   block-size: 100%;
 }
 
-.page {
-  inline-size: 1200px;
-  block-size: 100%;
-  margin: auto;
-  color: #fff;
-  font-family: 'Fira Sans Condensed', sans-serif;
-  font-size: 18px;
-  background-color: #1b1919;
-}
-
 h1,
 h2,
 h3,
@@ -35,6 +25,334 @@ fieldset {
 ul,
 ol {
   list-style: none;
+}
+
+.page {
+  width: 1200px;
+  height: 800px;
+  inline-size: 1200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  block-size: 100%;
+  margin: auto;
+  color: #fff;
+  font-family: 'Fira Sans Condensed', sans-serif;
+  font-size: 18px;
+  background-color: #1b1919;
+}
+
+.content {
+  max-width: 1140px;
+  margin: 133px 30px;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 711px 399px;
+  grid-template-areas: 
+  'result content__details'
+  ;
+  column-gap: 30px;
+  align-content: space-between;
+  align-items: end;
+}
+
+.result {
+  max-width: 711px;
+  display: flex;
+  flex-direction: column;
+  grid-area: result;
+}
+
+.search-form {
+  margin-top: 16px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+}
+
+.search-form__checkbox-list {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+}
+
+.search-form__label:has(.search-form__checkbox) {
+  cursor: pointer;
+  font-family: 'Fira Sans Condensed', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  display: flex;
+  gap: 5px;
+}
+
+.search-form__label:has(.search-form__textfield) {
+  cursor: pointer;
+  display: flex;
+  width: fit-content;
+  border-top: solid 1px white;
+  border-bottom: solid 1px white;
+}
+
+.search-form__textfield:focus {
+  outline: none;
+}
+
+.search-form__label:has(:focus-visible) {
+  outline: solid 1px white;
+  outline-offset: 1px;
+}
+
+.search-form__label:has(.search-form__checkbox):hover {
+  text-decoration: underline;
+}
+
+.search-form__textfield {
+  background-color: transparent;
+  border-style: none;
+  width: 225px;
+  height: 25px;
+  color: white;
+  appearance: none;
+}
+
+input::placeholder {
+  font-family: 'Fira Sans Condensed', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  color: #FFFFFFB2;
+  line-height: 100%;
+}
+
+.content__details {
+  grid-area: content__details;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+
+.content__list-container {
+  position: relative;
+  height: 298px;
+  overflow: auto;
+}
+
+.result__video-container {
+  position: relative;
+  width: 711px;
+  height: 386px;
+}
+
+.result__video {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+}
+
+.content__list {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.content__video-card {
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.content__video-card-thumbnail {
+  width: 194px;
+  height: 103px;
+  object-fit: cover;
+  object-position: center;
+  flex-shrink: 0;
+}
+
+.content__video-card-description-container {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.content__video-card-title {
+  width: 196px;
+  margin-bottom: 6px;
+  overflow: hidden;
+  line-height: 100%;
+  font-family: 'Oswald', sans-serif;
+  font-size: 30px;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.content__video-card-description {
+  overflow: hidden;
+  font-family: 'Fira Sans Condensed', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  text-overflow: ellipsis;
+  line-height: 16.2px;
+}
+
+.content__card-link {
+  display: inline-block;
+  text-decoration: none;
+  color: white;
+}
+
+.content__card-link:hover {
+  text-decoration: underline;
+  text-underline-offset: 1px;
+  text-decoration-thickness: 2px;
+}
+
+.content__card-link_current {
+  background-color: #545050;
+}
+
+.content__card-link:focus {
+  outline: none;
+}
+
+.content__list-item {
+  margin-left: 3px;
+  margin-right: 3px;
+}
+
+.content__list-item:first-child {
+  margin-top: 3px;
+}
+
+.content__list-item:has(:focus-visible) {
+  outline: solid 1px white;
+}
+
+.search-form__fieldset {
+  border-style: none;
+}
+
+.search-form__fieldset-title {
+  margin-bottom: 5px;
+  font-family: 'Fira Sans Condensed', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.search-form__pseudo-checkbox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: solid 1px white;
+  width: 19px;
+  height: 19px;
+  align-self: center;
+}
+
+input[type='checkbox']:checked + .search-form__pseudo-checkbox::after {
+  content: '';
+  display: flex;
+  width: 15px;
+  height: 15px;
+  justify-self: center;
+  align-self: center;
+  background-color: white;
+}
+
+.search-form__checkbox:focus {
+  outline: none;
+}
+
+.title {
+  font-family: 'Oswald', sans-serif;
+  font-size: 75px;
+  font-weight: 700;
+  line-height: 94%;
+  text-transform: uppercase;
+}
+
+.content__accent {
+  color: #545050;
+}
+
+.visually-hidden {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+} 
+
+.button {
+  cursor: pointer;
+  background-color: transparent;
+  border: solid 1px white;
+  font-family: 'Fira Sans Condensed', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: white;
+}
+
+.search-form__submit-button {
+  width: 194px;
+  height: 34px;
+  align-self: flex-end;
+}
+
+.search-form__submit-button:focus {
+  outline: none;
+}
+
+.search-form__submit-button:focus-visible {
+  outline: solid 1px white;
+  outline-offset: 1px;
+}
+
+.search-form__submit-button:hover {
+  text-decoration: underline;
+}
+
+.search-form__submit-button:active {
+  background-color: #545050;
+}
+
+.content__list-container {
+  padding-bottom: 2px;
+}
+
+.more-button {
+  width: calc(100% - 5px);
+  transform: translateX(2px);
+  height: 34px;
+  margin-top: 30px;
+}
+
+.more-button:focus {
+  outline: none;
+}
+
+.more-button:focus-visible {
+  outline: solid 1px white;
+  outline-offset: 1px;
+}
+
+.more-button:hover {
+  text-decoration: underline;
+}
+
+.more-button:active {
+  background-color: #545050;
 }
 
 /* Кастомный скроллбар */
