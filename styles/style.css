@@ -28,8 +28,6 @@ ol {
 }
 
 .page {
-  width: 1200px;
-  height: 800px;
   inline-size: 1200px;
   display: flex;
   justify-content: center;
@@ -49,8 +47,7 @@ ol {
   display: grid;
   grid-template-columns: 711px 399px;
   grid-template-areas: 
-  'result content__details'
-  ;
+  'result content__details';
   column-gap: 30px;
   align-content: space-between;
   align-items: end;
@@ -116,7 +113,7 @@ ol {
   appearance: none;
 }
 
-input::placeholder {
+.search-form__textfield::placeholder {
   font-family: 'Fira Sans Condensed', sans-serif;
   font-size: 18px;
   font-weight: 400;
@@ -224,6 +221,14 @@ input::placeholder {
   outline: none;
 }
 
+.content__card-link:focus-visible {
+  outline: solid 1px white;
+}
+
+.content__card-link:active {
+  background-color: #545050;
+}
+
 .content__list-item {
   margin-left: 3px;
   margin-right: 3px;
@@ -231,10 +236,6 @@ input::placeholder {
 
 .content__list-item:first-child {
   margin-top: 3px;
-}
-
-.content__list-item:has(:focus-visible) {
-  outline: solid 1px white;
 }
 
 .search-form__fieldset {
@@ -295,6 +296,7 @@ input[type='checkbox']:checked + .search-form__pseudo-checkbox::after {
 } 
 
 .button {
+  height: 34px;
   cursor: pointer;
   background-color: transparent;
   border: solid 1px white;
@@ -304,27 +306,26 @@ input[type='checkbox']:checked + .search-form__pseudo-checkbox::after {
   color: white;
 }
 
-.search-form__submit-button {
-  width: 194px;
-  height: 34px;
-  align-self: flex-end;
-}
-
-.search-form__submit-button:focus {
+.button:focus {
   outline: none;
 }
 
-.search-form__submit-button:focus-visible {
+.button:focus-visible {
   outline: solid 1px white;
   outline-offset: 1px;
 }
 
-.search-form__submit-button:hover {
+.button:hover {
   text-decoration: underline;
 }
 
-.search-form__submit-button:active {
+.button:active {
   background-color: #545050;
+}
+
+.search-form__submit-button {
+  width: 194px;
+  align-self: flex-end;
 }
 
 .content__list-container {
@@ -334,25 +335,7 @@ input[type='checkbox']:checked + .search-form__pseudo-checkbox::after {
 .more-button {
   width: calc(100% - 5px);
   transform: translateX(2px);
-  height: 34px;
   margin-top: 30px;
-}
-
-.more-button:focus {
-  outline: none;
-}
-
-.more-button:focus-visible {
-  outline: solid 1px white;
-  outline-offset: 1px;
-}
-
-.more-button:hover {
-  text-decoration: underline;
-}
-
-.more-button:active {
-  background-color: #545050;
 }
 
 /* Кастомный скроллбар */
